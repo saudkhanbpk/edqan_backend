@@ -52,6 +52,7 @@ async function dispatchNotification(notificationKind, notificationData, userEmai
             template_id: notificationTypesTemplates[notificationKind],
             dynamic_template_data: { ...notificationData }
         }
+        return 
         await sendGrid.send(message);
     } catch (error) {
         throw new Error('Sendgrid error sending notification, this action was successful but notification didn\'t go through, please refresh the page.')
