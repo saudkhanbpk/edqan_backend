@@ -11,7 +11,7 @@ import provinceModel from "../models/province.model.js";
 
 async function findAll(paginationQuery) {
   let query = {};
-  const queryResult = await paginator(countryModel, query, paginationQuery, [], { [paginationQuery?.id ? 'name' : 'order']: 1 })
+  const queryResult = await paginator(countryModel, query, paginationQuery, [], { ['name']: 1 })
 
   return queryResult;
 }
